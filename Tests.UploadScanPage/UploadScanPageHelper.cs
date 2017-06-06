@@ -34,8 +34,7 @@ namespace Tests.UploadScanPage
         }
 
         #region UploadScanPage
-        public void UploadScanPage(string baseAddress, string postUrl
-            , string imagesPath, CreateUploadScanPageInput inputs)
+        public void UploadScanPage(string baseAddress, string postUrl, CreateUploadScanPageInput inputs)
         {
 
             using (var client = new HttpClient())
@@ -54,11 +53,13 @@ namespace Tests.UploadScanPage
                         var imageName = input.ImageName;
 
                         // Add file content   
-                        var filePath = imagesPath + imageName;
+                        // var filePath = imagesPath + imageName;
+                        var filePath = imageName;
                         var fileContent = new ByteArrayContent(File.ReadAllBytes(@filePath));
                         fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                         {
-                            FileName = imageName
+                            // 注意，这里修改一下，只获取文件名；
+                            FileName = System.IO.Path.GetFileName(imageName)
                         };
                         content.Add(fileContent);
 
