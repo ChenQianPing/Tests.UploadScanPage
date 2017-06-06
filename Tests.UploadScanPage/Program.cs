@@ -76,7 +76,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610603",
                 PageNo = 1,
                 ScanNo = 1,
-                ImageName = @"e:\10001004\1.jpg",
+                ImageName = @"e:\\10001004\\1.jpg",
                 // ImageName = "1.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\1.jpg")
             };
@@ -87,7 +87,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610603",
                 PageNo = 2,
                 ScanNo = 2,
-                ImageName = @"e:\10001004\2.jpg",
+                ImageName = @"e:\\10001004\\2.jpg",
                 // ImageName = "2.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\2.jpg")
             };
@@ -98,7 +98,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610619",
                 PageNo = 1,
                 ScanNo = 3,
-                ImageName = @"e:\10001004\3.jpg",
+                ImageName = @"e:\\10001004\\3.jpg",
                 // ImageName = "3.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\3.jpg")
             };
@@ -109,7 +109,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610619",
                 PageNo = 2,
                 ScanNo = 4,
-                ImageName = @"e:\10001004\4.jpg",
+                ImageName = @"e:\\10001004\\4.jpg",
                 // ImageName = "4.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\4.jpg")
             };
@@ -120,7 +120,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610631",
                 PageNo = 1,
                 ScanNo = 5,
-                ImageName = @"e:\10001004\5.jpg",
+                ImageName = @"e:\\10001004\\5.jpg",
                 // ImageName = "5.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\5.jpg")
             };
@@ -131,7 +131,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610631",
                 PageNo = 2,
                 ScanNo = 6,
-                ImageName = @"e:\10001004\6.jpg",
+                ImageName = @"e:\\10001004\\6.jpg",
                 // ImageName = "6.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\6.jpg")
             };
@@ -142,7 +142,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610627",
                 PageNo = 1,
                 ScanNo = 7,
-                ImageName = @"e:\10001004\7.jpg",
+                ImageName = @"e:\\10001004\\7.jpg",
                 // ImageName = "7.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\7.jpg")
             };
@@ -153,7 +153,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610627",
                 PageNo = 2,
                 ScanNo = 8,
-                ImageName = @"e:\10001004\8.jpg",
+                ImageName = @"e:\\10001004\\8.jpg",
                 // ImageName = "8.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\8.jpg")
             };
@@ -164,7 +164,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610615",
                 PageNo = 1,
                 ScanNo = 9,
-                ImageName = @"e:\10001004\9.jpg",
+                ImageName = @"e:\\10001004\\9.jpg",
                 // ImageName = "9.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\9.jpg")
             };
@@ -175,7 +175,7 @@ namespace Tests.UploadScanPage
                 TestNo = "1610615",
                 PageNo = 2,
                 ScanNo = 10,
-                ImageName = @"e:\10001004\10.jpg",
+                ImageName = @"e:\\10001004\\10.jpg",
                 // ImageName = "10.jpg",
                 ImageMd5 = Md5CheckerHelper.GetMd5HashFromFile("e:\\10001004\\10.jpg")
             };
