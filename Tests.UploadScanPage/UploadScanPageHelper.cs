@@ -59,7 +59,10 @@ namespace Tests.UploadScanPage
                         fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
                         {
                             // 注意，这里修改一下，只获取文件名；
-                            FileName = System.IO.Path.GetFileName(imageName)
+                            FileName = System.IO.Path.GetFileName(imageName),   // 文件名
+                            FileNameStar = inputs.ExamCourseId,                 // 考试科目Id
+                            Name = input.TestNo                                 // 考号
+
                         };
                         content.Add(fileContent);
 

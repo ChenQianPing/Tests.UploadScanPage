@@ -61,6 +61,7 @@ namespace Tests.UploadScanPage
     public class ScanPageInput
     {
 
+
         /// <summary>
         /// 页面Id，Guid，扫描端生成
         /// </summary>

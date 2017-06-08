@@ -15,9 +15,11 @@ namespace Tests.UploadScanPage
              * @param postUrl 请求Url
              * @param imagesPath 本地图片路径
              */
-            var baseAddress = "http://192.168.2.100:9001";
+            // var baseAddress = "http://192.168.2.100:9001";
+            var baseAddress = "http://localhost:7427";
             var postUrl1 = "/api/scn/UploadScanPage";
             var postUrl2 = "/api/scn/UploadScanPageWithoutImages";
+            var postUrl3 = "/api/scn/ReUploadScanPage";
             // var imagesPath = @"e:\10001004\";
 
             /* @brief 模拟请求数据，学生考号列表
@@ -195,7 +197,8 @@ namespace Tests.UploadScanPage
             var input = new CreateUploadScanPageInput
             {
                 ExamCourseId = "3208075F3F8A4BD19032B41331A1C133",
-                BatchId = Guid.NewGuid().ToString("N").ToUpper(),
+                // BatchId = Guid.NewGuid().ToString("N").ToUpper(),
+                BatchId = "C9F32FFADF0E49BD84FEF96F12F5180C",
                 MachineIp = "192.168.2.100",
                 ScanUserId = "C8F1E422F2C14E55B8F05756708CE994",
 
@@ -203,7 +206,12 @@ namespace Tests.UploadScanPage
                 ScanPages = listPage
             };
 
-            new UploadScanPageHelper().UploadScanPage(baseAddress, postUrl1, input);
+            // 上传扫描页面，** 注意：这个方法暂时弃用，统一用重复上传扫描页面方法；
+            // new UploadScanPageHelper().UploadScanPage(baseAddress, postUrl1, input);
+
+            // 重复上传扫描页面；BatchId可以为空，或者不传；
+            new UploadScanPageHelper().UploadScanPage(baseAddress, postUrl3, input);
+
             // new UploadScanPageHelper().UploadScanPageWithoutImages(baseAddress, postUrl2, input);
 
         }
