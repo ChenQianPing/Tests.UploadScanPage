@@ -61,7 +61,13 @@ namespace Tests.UploadScanPage
                             // 注意，这里修改一下，只获取文件名；
                             FileName = System.IO.Path.GetFileName(imageName),   // 文件名
                             FileNameStar = inputs.ExamCourseId,                 // 考试科目Id
-                            Name = input.TestNo                                 // 考号
+                            Name = input.PaperId
+                            /*
+                             * 注意：
+                             * 注释掉这一句，Name = input.TestNo 
+                             * 新加 Name = input.PaperId，改成PaperId
+                                                            
+                            */
 
                         };
                         content.Add(fileContent);

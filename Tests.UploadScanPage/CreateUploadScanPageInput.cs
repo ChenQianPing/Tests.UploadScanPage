@@ -48,7 +48,7 @@ namespace Tests.UploadScanPage
         public virtual string PaperId { get; set; }
 
         /// <summary>
-        /// 学生考号，扫描端识别
+        /// 学生考号，扫描端识别，可以为空；
         /// </summary>
         public virtual string TestNo { get; set; }
 
@@ -66,6 +66,9 @@ namespace Tests.UploadScanPage
         /// 页面Id，Guid，扫描端生成
         /// </summary>
         public virtual string PageId { get; set; }
+
+        /* 新增 PaperId*/
+        public virtual string PaperId { get; set; }
 
         /// <summary>
         /// 学生考号

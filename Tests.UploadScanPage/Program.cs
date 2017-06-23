@@ -24,8 +24,8 @@ namespace Tests.UploadScanPage
 
             /* @brief 模拟请求数据，学生考号列表
              * @param PaperId 试卷Id
-             * @param TestNo 考号 
-             * @param RcgOmr OMR识别值
+             * @param TestNo 考号，考虑到先上传后识别的情况，可以为空；
+             * @param RcgOmr OMR识别值，考虑到先上传后识别的情况，可以为空；
              */
             var s1 = new StudentTestNoInput
             {
@@ -65,8 +65,9 @@ namespace Tests.UploadScanPage
             var listStudent = new List<StudentTestNoInput> { s1, s2, s3, s4, s5 };
 
             /* @brief 试卷页面数据
+             * @param PaperId 新增一列传PaperId，代替考号，这样子的考号可以为空；
              * @param PageId 页面Id
-             * @param TestNo 考号
+             * @param TestNo 考号，可以为空，传"";
              * @param PageNo 页码
              * @param ScanNo 扫描序号，流水号
              * @param ImageName 图片文件名，带后缀，如1.jpg
@@ -75,6 +76,7 @@ namespace Tests.UploadScanPage
             var p1 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",   // 新增一列传PaperId，代替考号，这样子的考号可以为空；
                 TestNo = "1610603",
                 PageNo = 1,
                 ScanNo = 1,
@@ -86,6 +88,7 @@ namespace Tests.UploadScanPage
             var p2 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610603",
                 PageNo = 2,
                 ScanNo = 2,
@@ -97,6 +100,7 @@ namespace Tests.UploadScanPage
             var p3 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610619",
                 PageNo = 1,
                 ScanNo = 3,
@@ -108,6 +112,7 @@ namespace Tests.UploadScanPage
             var p4 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610619",
                 PageNo = 2,
                 ScanNo = 4,
@@ -119,6 +124,7 @@ namespace Tests.UploadScanPage
             var p5 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610631",
                 PageNo = 1,
                 ScanNo = 5,
@@ -130,6 +136,7 @@ namespace Tests.UploadScanPage
             var p6 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610631",
                 PageNo = 2,
                 ScanNo = 6,
@@ -141,6 +148,7 @@ namespace Tests.UploadScanPage
             var p7 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610627",
                 PageNo = 1,
                 ScanNo = 7,
@@ -152,6 +160,7 @@ namespace Tests.UploadScanPage
             var p8 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610627",
                 PageNo = 2,
                 ScanNo = 8,
@@ -163,6 +172,7 @@ namespace Tests.UploadScanPage
             var p9 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610615",
                 PageNo = 1,
                 ScanNo = 9,
@@ -174,6 +184,7 @@ namespace Tests.UploadScanPage
             var p10 = new ScanPageInput
             {
                 PageId = Guid.NewGuid().ToString("N").ToUpper(),
+                PaperId = "",
                 TestNo = "1610615",
                 PageNo = 2,
                 ScanNo = 10,
