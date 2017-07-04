@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tests.UploadScanPage
+namespace Tests.UploadScanPage.Helper
 {
     public class Md5CheckerHelper
     {

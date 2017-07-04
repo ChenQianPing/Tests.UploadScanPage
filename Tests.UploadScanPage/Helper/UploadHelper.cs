@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
+using Tests.UploadScanPage.Dtos;
 
-namespace Tests.UploadScanPage
+namespace Tests.UploadScanPage.Helper
 {
-    public class UploadScanPageHelper
+    public class UploadHelper
     {
-
+        #region UploadScanPageWithoutImages
         public void UploadScanPageWithoutImages(string baseAddress, string postUrl, 
             CreateUploadScanPageInput inputs)
         {
@@ -32,6 +33,7 @@ namespace Tests.UploadScanPage
 
             }
         }
+        #endregion
 
         #region UploadScanPage
         public void UploadScanPage(string baseAddress, string postUrl, CreateUploadScanPageInput inputs)
@@ -89,6 +91,51 @@ namespace Tests.UploadScanPage
                     Console.WriteLine(result.StatusCode);
                     Console.WriteLine(str);
                     Console.ReadLine();
+                }
+            }
+        }
+        #endregion
+
+        #region UpLoadTmplPages
+        public string UpLoadTmplPages(string baseAddress, string postUrl, List<CreateTmplImgPathInput> inputs)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("multipart/form-data"));
+
+                using (var content = new MultipartFormDataContent())
+                {
+                    // Make sure to change API address  
+                    client.BaseAddress = new Uri(baseAddress);
+                    var count = 1;
+
+                    foreach (var input in inputs)
+                    {
+                        var imageName = input.TmplPath;
+
+                        // Add file content   
+                        var filePath = imageName;
+                        var fileContent = new ByteArrayContent(File.ReadAllBytes(@filePath));
+                        fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                        {
+                            FileName = imageName
+                        };
+                        content.Add(fileContent);
+
+                        Console.WriteLine((count++) + "/" + inputs.Count);
+                    }
+
+                    var d = new NameValueCollection { { "inputs", JsonConvert.SerializeObject(inputs) } };
+                    var fromData = GetFormDataByteArrayContent(d);
+                    foreach (var item in fromData)
+                    {
+                        content.Add(item);
+                    }
+
+                    // Make a call to Web API  
+                    return client.PostAsync(postUrl, content).Result.Content.ReadAsStringAsync().Result; ;
+
                 }
             }
         }
