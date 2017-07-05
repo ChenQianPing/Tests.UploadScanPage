@@ -11,5 +11,6 @@ namespace Tests.UploadScanPage.Dtos
         public string ExamCourseId { get; set; }
         public int PageNo { get; set; }
         public string TmplPath { get; set; }
+        public virtual string ImageMd5 { get; set; }
     }
 }

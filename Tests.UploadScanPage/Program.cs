@@ -12,8 +12,8 @@ namespace Tests.UploadScanPage
     {
         static void Main(string[] args)
         {
-            
 
+            TestUploadHelper.TestUploadScanPage();
 
         }
     }

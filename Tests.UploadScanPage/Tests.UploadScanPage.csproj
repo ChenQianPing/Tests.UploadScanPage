@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dtos\CreateUploadImageNameInput.cs" />
     <Compile Include="Dtos\CreateUploadScanPageInput.cs" />
     <Compile Include="Dtos\CreateTmplImgPathInput.cs" />
     <Compile Include="Helper\Md5CheckerHelper.cs" />
